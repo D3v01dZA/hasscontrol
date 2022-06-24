@@ -260,7 +260,11 @@ class EntityListView extends Ui.View {
       drawable = WatchUi.loadResource(Rez.Drawables.ScriptOff);
     } else if (type == Hass.TYPE_SCENE) {
       drawable = WatchUi.loadResource(Rez.Drawables.Scene);
-    }
+    } else if (type == Hass.TYPE_BUTTON) {
+      drawable = WatchUi.loadResource(Rez.Drawables.ScriptOff);
+    } else if (type == Hass.TYPE_INPUT_BUTTON) {
+      drawable = WatchUi.loadResource(Rez.Drawables.ScriptOff);
+    } 
 
     if (drawable == null) {
         drawable = WatchUi.loadResource(Rez.Drawables.Unknown);

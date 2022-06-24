@@ -322,6 +322,12 @@ module Hass {
         action = Client.ENTITY_ACTION_OPEN_COVER;
         loadingText = "Opening";
       }
+    } else if (entity.getType() == Entity.TYPE_BUTTON) {
+      action = Client.ENTITY_ACTION_PRESS;
+      loadingText = "Pressing";
+    } else if (entity.getType() == Entity.TYPE_INPUT_BUTTON) {
+      action = Client.ENTITY_ACTION_PRESS;
+      loadingText = "Pressing";
     } else {
       if (currentState == Entity.STATE_ON) {
         action = Client.ENTITY_ACTION_TURN_OFF;
@@ -351,6 +357,10 @@ module Hass {
       entityType = "fan";
     } else if (entity.getType() == Entity.TYPE_INPUT_BOOLEAN) {
       entityType = "input_boolean";
+    } else if (entity.getType() == Entity.TYPE_BUTTON) {
+      entityType = "button";
+    } else if (entity.getType() == Entity.TYPE_INPUT_BUTTON) {
+      entityType = "input_button";
     }
 
     App.getApp().viewController.showLoader(loadingText);
